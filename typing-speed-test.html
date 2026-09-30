@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KeyPop — Typing Speed Test</title>
+<link rel="stylesheet" href="typing-speed-test.css" />
+</head>
+<body>
+
+<h1>Key<span>Pop</span> ⌨️</h1>
+<p class="subtitle">How fast can your fingers go?</p>
+
+<!-- Buttons: time choice, difficulty, dark mode -->
+<div class="bar">
+  <button class="time-btn active" data-time="15">15s</button>
+  <button class="time-btn" data-time="30">30s</button>
+  <button class="time-btn" data-time="60">60s</button>
+  <button class="diff-btn active" data-diff="easy">Easy</button>
+  <button class="diff-btn" data-diff="medium">Medium</button>
+  <button class="diff-btn" data-diff="hard">Hard</button>
+  <button id="restartTopBtn">🔁 Restart</button>
+  <button id="darkBtn">🌙 Dark</button>
+</div>
+
+<!-- Live stats -->
+<div class="stats">
+  <div class="stat"><div class="number" id="timeLeft">15</div><div class="label">seconds</div></div>
+  <div class="stat"><div class="number" id="wpm">0</div><div class="label">WPM</div></div>
+  <div class="stat"><div class="number" id="accuracy">100%</div><div class="label">accuracy</div></div>
+</div>
+
+<!-- The sentence to type -->
+<div class="quote-box" id="quoteBox"></div>
+
+<!-- Where the user types -->
+<textarea id="input" placeholder="Start typing here to begin..." autocomplete="off"></textarea>
+
+<!-- Result card (shown when time is up) -->
+<div id="result">
+  <h2>⏰ Time's up!</h2>
+  <div class="big" id="finalWpm">0</div>
+  <p>words per minute</p>
+  <p>Accuracy: <b id="finalAcc">0%</b></p>
+  <p class="best" id="bestLine"></p>
+  <button id="restartBtn">🔁 Try again</button>
+</div>
+
+<!-- Leaderboard (top 5 scores, saved in the browser) -->
+<div id="board">
+  <h3>🏆 Your top scores</h3>
+  <ol id="boardList"><li>No scores yet — play a round!</li></ol>
+</div>
+
+<script src="typing-speed-test.js"></script>
+</body>
+</html>
